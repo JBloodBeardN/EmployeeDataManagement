@@ -9,6 +9,8 @@ var config = {
   };
   firebase.initializeApp(config);
 
+  var database = firebase.database();
+
 var name;
 var role;
 var startDate;
@@ -27,6 +29,9 @@ $('#add-employee-btn').on("click", function(e){
     alert("Employee "+name+" added to database.");
 
 function sendRecordToFirebase(arrayObject){
+    database.ref().set({
+        
+    });
     // stuff for sending to database.ref().set() stuff
 }
 
