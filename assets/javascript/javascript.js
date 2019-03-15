@@ -64,10 +64,49 @@ var config = {
     // Handle the errors
     }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
+<<<<<<< HEAD
     });
     
     
     function sendRecordToFirebase(arrayObject){
+=======
+  });
+=======
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyAiF_D3wKvTxjFOw1MhUH8yad-MdMIk5os",
+    authDomain: "coderbay-4caa2.firebaseapp.com",
+    databaseURL: "https://coderbay-4caa2.firebaseio.com",
+    projectId: "coderbay-4caa2",
+    storageBucket: "coderbay-4caa2.appspot.com",
+    messagingSenderId: "516782442624"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+var name;
+var role;
+var startDate;
+var monthlyRate;
+var monthsWorked;
+var totalBilled;
+
+$('#add-employee-btn').on("click", function(e){
+    e.preventDefault();
+    name = $('#employee-name-input').val();
+    role = $('#employee-name-input').val();
+    startDate = $('#employee-name-input').val();
+    monthlyRate = $('#employee-name-input').val();
+    var arrayToFirebase = [name, role, startDate, monthlyRate];
+    sendRecondToFirebase(arrayToFirebase);
+    alert("Employee "+name+" added to database.");
+
+function sendRecordToFirebase(arrayObject){
+    database.ref().set({
+        
+    });
+>>>>>>> 5f9c781ca637eef7e0efbd0f1983e048f7dcf474
     // stuff for sending to database.ref().set() stuff
     }
     
