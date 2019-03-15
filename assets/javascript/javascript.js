@@ -9,35 +9,70 @@ var config = {
   };
   firebase.initializeApp(config);
 
+var name;
+var role;
+var startDate;
+var monthlyRate;
+var monthsWorked;
+var totalBilled;
 
+$('#add-employee-btn').on("click", function(e){
+    e.preventDefault();
+    name = $('#employee-name-input').val();
+    role = $('#employee-name-input').val();
+    startDate = $('#employee-name-input').val();
+    monthlyRate = $('#employee-name-input').val();
+    var arrayToFirebase = [name, role, startDate, monthlyRate];
+    sendRecondToFirebase(arrayToFirebase);
+    alert("Employee "+name+" added to database.");
+
+function sendRecordToFirebase(arrayObject){
+    // stuff for sending to database.ref().set() stuff
+}
+
+// onsubmit of form (onClick of #add-employee-btn)
+// preventDefault();
+// -set local variables equal to $(#inputID)
+// -sendRecordToFirebase();
 // alerts for employee added
-// -error alert if failure
-
-// onsubmit of form
-// -send to firebase
-// -update table in html (rebuild from database.snapshot)
 // -clear form (or reset defaults/placeholders)
 
-// form fields
-// -name *required
-// -role*required
-// -start date *required
-// monthly rate *required
-
-// only in table:
-// months worked- calculated
-// total billed -calculated
-
-// jumbotron that looks pretty
-
+// onChildAdded ()
+// function updateTableInHTML();
 
 // local variables:
-// name
+// name 
 // role
 // startDate
 // monthlyRate
 // monthsWorked
 // totalBilled
+
+// needed functions:
+// function updateTableInHTML(object)
+// -build a <tr> element 
+//  >>append all to this <tr> 
+//  >>append tr to <tbody>
+// -print object to HTML field
+
+// function sendRecordToFireBase()
+// 
+
+// form fields
+// #name *required
+// #role*required
+// #startDate *required
+// #monthlyRate *required
+
+// only in table:
+// #monthsWorked- calculated
+// #totalBilled -calculated
+
+// jumbotron that looks pretty
+
+
+
+
 
 
 // bonus: delete a record from table >> deletes from database (.remove())
